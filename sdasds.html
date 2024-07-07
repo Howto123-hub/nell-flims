@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		form {
+	margin-bottom: 20px;
+}
+
+form label, form input, form textarea, form submit {
+	display: block;
+	margin-bottom: 10px;
+}
+
+#post-img {
+	max-width: 100%;
+	margin-bottom: 10px;
+}
+
+#post-title {
+	font-size: 24px;
+	margin: 10px 0;
+}
+
+#post-description {
+	font-size: 16px;
+	margin: 10px 0;
+}
+
+	</style>
+</head>
+<body>
+	
+</body>
+</html>
+<div class="post">
+	<img id="post-img" src="" alt="Post Image">
+	<h2 id="post-title"></h2>
+	<p id="post-description"></p>
+</div>
+
+<form id="add-post-form">
+	<label for="post-img-input">Choose an image:</label>
+	<input type="file" id="post-img-input" name="post-img" accept="image/*"><br>
+	<label for="post-title-input">Title:</label>
+	<input type="text" id="post-title-input" name="post-title"><br>
+	<label for="post-description-input">Description:</label>
+	<textarea id="post-description-input" name="post-description"></textarea><br>
+	<input type="submit" value="Add Post">
+</form>
+<script>
+// Get the form and the container where posts will be displayed
+const postForm = document.getElementById("post-form");
+const postContainer = document.getElementById("post-container");
+
+// Listen for form submissions
+postForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  // Get the user-entered post data
+  const postImgUrl = document.getElementById("post-img-url").value;
+  const postTitle = document.getElementById("post-title").value;
+  const postContent = document.getElementById("post-content").value;
+
+  // Create a new post element
+  const postElement = document.createElement("div");
+  postElement.classList.add("post");
+
+  // Add the post image
+  const postImg = document.createElement("img");
+  postImg.src = postImgUrl;
+  postImg.alt = "Post image";
+  postElement.appendChild(postImg);
+
+  // Add the post title
+  const postTitleElement = document.createElement("h2");
+  postTitleElement.textContent = postTitle;
+  postElement.appendChild(postTitleElement);
+
+  // Add the post content
+  const postContentElement = document.createElement("p");
+  postContentElement.textContent = postContent;
+  postElement.appendChild(postContentElement);
+
+  // Add the new post element to the post container
+  postContainer.appendChild(postElement);
+
+  // Clear the form inputs
+  postForm.reset();
+});
+
+</script>

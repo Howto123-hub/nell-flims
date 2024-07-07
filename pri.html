@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="shortcut icon" href="files/New Project 9 [2C5F752].png" type="image/x-icon">
+    <script src="script.js"></script>
+    <title>NellFlim | Films</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="PageTitle">NellFlim</h1>
+        <span>
+            <nav>
+                <ul class="ha">
+                    <li><a class="navb" href="index.html">Home</a></li>
+                    <li><a class="navb" href="#" style="color: brown;">Secret</a></li>
+                    <li><a class="navb" href="#">My List</a></li>
+                    <p class="MovTi">Films to Watch!</p>
+                </ul>
+            </nav>
+        </span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="MovTi">
+    <p class="MovTi2">Films to Watch!</p>
+    </div>
+    <div class="MovieBody">        
+<video src="movie/Perdev Cope stress grp 3.mp4" controls></video>
+        
+        <div class="text">
+            <br>
+            <div class="Descr">
+                
+            <h2 class="Title">Rhea's Journey</h2>
+            <p class="category2">Drama • Action • Emotional &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Rated 12+</p>
+            <ul>
+              <li><a class="play4" href="#">Coming Soon</a></li>
+              <li><a class="shareplay4" href="#" onclick="copyToClipboard('Sabing Coming Soon pa eh')">Share</a></li>
+
+          </ul>
+            <p class="Desc">In this film, STEM students make a short film about a happy-go-lucky student named Rhea. </p>
+            <p class="Desc">As she takes on more responsibilities and pressure builds, Rhea begins to feel stressed and anxious. Her struggles reach a breaking point, but with help from loved ones, Rhea learns to cope and move forward. "Rhea's Journey" is a powerful and moving story about mental health and resilience.</p>
+
+            <ul>
+                <li><a class="play3" href="#">Coming Soon</a></li>
+                <li><a class="shareplay3" href="#" onclick="copyToClipboard('Sabing Coming Soon pa eh')">Share</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+
+     
+</body>
+<script>
+    // Get all div elements
+    var divs = document.querySelectorAll('div');
+    
+    // Define function to fade in divs
+    function fadeInDivs() {
+        for (var i = 0; i < divs.length; i++) {
+            divs[i].style.opacity = 1; // Set opacity to 1
+        }
+    }
+    
+    // Call function after a delay of 1 second
+    setTimeout(fadeInDivs, 500);
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Videos | NellFlim</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container snaps-inline">
+          <div class="items">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+            <div class="item">Item 7</div>
+            <div class="item">Item 8</div>
+          </div>
+        </div>
+        <button class="nav-button nav-button--left">&#8249;</button>
+        <button class="nav-button nav-button--right">&#8250;</button>
+      </div>
+        
+</body>
+<script>
+const container = document.querySelector('.container');
+const items = document.querySelector('.items');
+const navButtons = document.querySelectorAll('.nav-button');
+
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const itemWidth = items.querySelector('.item').offsetWidth;
+    const containerWidth = container.offsetWidth;
+    const containerScrollLeft = container.scrollLeft;
+    const direction = button.classList.contains('nav-button--left') ? -1 : 1;
+    const targetScrollLeft = containerScrollLeft + (itemWidth + 20) * direction; // 20 is the margin between items
+    const maxScrollLeft = items.offsetWidth - containerWidth;
+
+    if (targetScrollLeft < 0) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else if (targetScrollLeft > maxScrollLeft) {
+      container.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+    } else {
+      container.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
+    }
+  });
+});
+
+</script>
+</html>

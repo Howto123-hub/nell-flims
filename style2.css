@@ -1,0 +1,51 @@
+.wrapper {
+    position: relative;
+  }
+  
+  .container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .items {
+    display: flex;
+    scroll-snap-align: start;
+  }
+  
+  .item {
+    flex-shrink: 0;
+    width: 200px;
+    height: 300px;
+    margin-right: 20px;
+    scroll-snap-stop: always;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-button--left {
+    left: 10px;
+  }
+  
+  .nav-button--right {
+    right: 10px;
+    
+  }
+  .nav-button--left:hover {
+    left: 10px;
+  }
+  
+  .nav-button--right:hover  {
+    right: 10px;
+    background-color: turquoise;
+    
+  }
